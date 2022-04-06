@@ -32,7 +32,7 @@ Plant.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'gallery',
+    modelName: 'plant',
     }
 )
 
