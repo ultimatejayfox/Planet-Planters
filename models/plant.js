@@ -35,15 +35,6 @@ Plant.init(
             key: 'id'
         },
     },
-    comment_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'comment_id',
-            key: 'id',
-            unique: false
-        },
-    },
     },
     {
     sequelize,

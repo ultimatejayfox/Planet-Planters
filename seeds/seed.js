@@ -12,7 +12,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const Plant of plantData) {
+  for (const plant of plantData) {
     await Plant.create({
       ...plant,
       user_id: users[Math.floor(Math.random() * users.length)].id,

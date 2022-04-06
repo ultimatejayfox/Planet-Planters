@@ -5,8 +5,7 @@ const Comment_Id = require('./comment_id')
 Plant.belongsToMany(User, {
     through: {
         model: Comment_Id,
-    },
-    as: 'comment_id'
+    }
 });
 
 User.hasMany(Plant, {
