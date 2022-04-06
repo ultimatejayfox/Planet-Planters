@@ -23,7 +23,7 @@ Plant.init(
         type: DataTypes.STRING,
         allowNull: true,
     },
-    date_submitted: {
+    date_submitted: { // make sure these get the helper on them through handlebars
         type: DataTypes.DATE,
         allowNull: false,
       },

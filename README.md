@@ -28,7 +28,8 @@ AND THEN comment on other people's posts as well
 - `express.js`
 - `MYSQL`
 - `Sequelize`
-
+- `bcrypt`
+- `dotenv`
 
 ## Installation 
 - Begin by opening the terminal 
@@ -36,6 +37,8 @@ AND THEN comment on other people's posts as well
 - then `npm i express`
 - `npm i mysql2`
 - `npm i sequelize`
+- `npm i bcrypt`
+- `npm i dotenv`
 
 ## Usage
 
