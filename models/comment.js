@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment_Id extends Model {}
+class Comment extends Model {}
 
-Comment_Id.init(
+Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -25,13 +25,21 @@ Comment_Id.init(
                 key: 'id'
             }
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        date_submitted: { // make sure these get the helper on them through handlebars
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
     },
     {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment_id',
+        modelName: 'comment',
         }
     )
     
-    module.exports = Comment_Id;
+    module.exports = Comment;

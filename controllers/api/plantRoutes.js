@@ -15,6 +15,8 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// still needs to Comment.findAll for each plant
+// need to find all comments that match a certain plant when viewing that plant
 router.get('/:id', async (req, res) => {
   try {
     const plantData = await Plant.findByPk(req.params.id, {
