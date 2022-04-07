@@ -1,0 +1,285 @@
+.gradient {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
+  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
+}
+
+.background {
+  background-image: url("../assets/Images/sunnylandscape.jpg");
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  background-color: rgba(238, 230, 227, 0.7);
+  border-radius: 2%;
+  max-height: 20%;
+  -webkit-box-shadow: 20px 20px 20px black;
+          box-shadow: 20px 20px 20px black;
+  transform: rotateY(3.5deg) rotateX(3.5deg);
+  -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+}
+
+header .row1 {
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: calc(100vw/10);
+          column-gap: calc(100vw/10);
+}
+
+header .row1 .homebtn {
+  margin: 2%;
+  border-radius: 15%;
+  height: 2.5em;
+  width: 7em;
+  background-color: azure;
+}
+
+header .row1 .homebtn:active {
+  background-color: green;
+}
+
+header .row1 .login {
+  margin: 2%;
+  border-radius: 15%;
+  height: 2.5em;
+  width: 7em;
+  background-color: azure;
+}
+
+header .row1 .login:active {
+  background-color: green;
+}
+
+header .row1 .newPost {
+  margin: 2%;
+  border-radius: 15%;
+  height: 2.5em;
+  width: 7em;
+  background-color: azure;
+}
+
+header .row1 .newPost:active {
+  background-color: green;
+}
+
+header .row1 h1 {
+  padding: 5%;
+}
+
+header .row2 {
+  border: 5px double black;
+  padding: 2%;
+  margin: .5em;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+.main .statBox {
+  margin: 2%;
+  padding: 1.5%;
+  border-radius: 5%;
+  background-color: rgba(238, 230, 227, 0.7);
+  height: 45vh;
+  width: 45vw;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  -webkit-box-shadow: 20px 20px 20px black;
+          box-shadow: 20px 20px 20px black;
+  transform: rotateY(3.5deg) rotateX(3.5deg);
+  -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+}
+
+.main .statBox h4 {
+  text-align: center;
+  font-size: x-large;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.main .statBox .statList li {
+  border: 3px double black;
+  font-weight: bolder;
+  position: relative;
+  list-style-type: none;
+  margin-top: 10%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  text-align: left;
+  height: 2em;
+  width: 50%;
+  background-color: azure;
+}
+
+.main .activity {
+  -webkit-box-shadow: 20px 20px 20px black;
+          box-shadow: 20px 20px 20px black;
+  transform: rotateY(3.5deg) rotateX(3.5deg);
+  -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+  margin: 2%;
+  padding: 1.5%;
+  border-radius: 3%;
+  background-color: rgba(238, 230, 227, 0.7);
+  height: 45vh;
+  width: 100vw;
+  -webkit-column-count: 2;
+          column-count: 2;
+  max-width: 100%;
+}
+
+.main .activity .userComments {
+  border: 1px double black;
+  position: relative;
+  background-color: azure;
+  height: 99%;
+  overflow-y: scroll;
+}
+
+.main .activity .userPosts {
+  border: 1px double black;
+  position: relative;
+  background-color: azure;
+  height: 99%;
+  overflow-y: scroll;
+}
+
+.title {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  background-image: url("../assets/Images/dark-leaves.jfif");
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin: 5%;
+  background-color: rgba(238, 230, 227, 0.7);
+  width: 40%;
+  min-width: 200px;
+}
+
+.form h3 {
+  font-size: xx-large;
+}
+
+.form .property {
+  position: relative;
+  text-align: left;
+  font-size: x-large;
+  padding: 5%;
+  width: 70%;
+  border: 2px solid black;
+}
+
+.form .postButton {
+  margin: 2%;
+  border-radius: 15%;
+  height: 2.5em;
+  width: 7em;
+  background-color: azure;
+}
+
+.form .postButton:active {
+  background-color: green;
+}
+
+@media screen and (max-width: 900px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .background {
+    background-repeat: repeat-y;
+  }
+  header {
+    width: 100%;
+  }
+  header .row1 {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .main .statBox {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .main .statBox .statList li {
+    margin-top: 2%;
+  }
+  .main .activity {
+    -webkit-column-count: 1;
+            column-count: 1;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+/*# sourceMappingURL=style.css.map */
