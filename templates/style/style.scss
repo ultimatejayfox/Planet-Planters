@@ -1,0 +1,204 @@
+$buttonColor : azure;
+$utilColor : green;
+// $bgColor : rgba(255, 127, 80, .7);
+$bgColor : rgba(238, 230, 227, 0.7);
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;    
+    text-align: center;     
+}
+
+@mixin buttonBehave{
+        margin: 2%;
+        // padding-inline-start: 5%;
+
+        border-radius: 15%;
+        height: 2.5em;
+        width: 7em;
+        background-color: $buttonColor;
+        &:active{
+            background-color: $utilColor;
+        };
+        
+}
+
+.gradient{
+    background-image: linear-gradient(
+    rgba(236, 185, 102, 0.3) 0%,
+    rgba(236, 220, 102, 0.6) 100%
+    );
+}
+
+.background{
+    background-image: url('../assets/Images/sunnylandscape.jpg');
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+header{
+    @include flexCenter(column);
+    background-color: $bgColor;
+    border-radius: 2%;
+    max-height: 20%;
+    box-shadow: 20px 20px 20px rgb(0, 0, 0);
+    transform: rotateY(3.5deg) rotateX(3.5deg);
+    -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+    .row1{
+        column-count: 2;
+        column-gap: calc(100vw/10);
+        .homebtn{
+            @include buttonBehave();
+        }
+        .login{
+            @include buttonBehave();
+        }
+        .newPost{
+            @include buttonBehave();
+        }
+        h1{
+            padding: 5%;
+        }
+    };
+    .row2{
+        border:5px double black;
+        padding: 2%;
+        margin: .5em;
+    };
+};
+
+.main{
+    @include flexCenter(row);
+    .statBox{
+        margin: 2%;
+        padding: 1.5%;
+        border-radius: 5%;
+        background-color: $bgColor;
+        height: 45vh;
+        width: 45vw;
+        min-height: fit-content;
+        box-shadow: 20px 20px 20px rgb(0, 0, 0);
+        transform: rotateY(3.5deg) rotateX(3.5deg);
+        -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+        h4{
+            text-align: center;
+            font-size: x-large;
+            text-decoration:underline;
+            font-weight: bolder;
+        };
+        .statList {
+            li{
+                border:3px double black;
+                font-weight: bolder;
+                position: relative;
+                list-style-type: none;
+                margin-top: 10%;
+                justify-content: left;
+                align-content: flex-start;
+                text-align: left;
+                height: 2em;
+                width: 50%;
+                background-color: $buttonColor
+            }
+        }
+    };
+    .activity{
+        box-shadow: 20px 20px 20px rgb(0, 0, 0);
+        transform: rotateY(3.5deg) rotateX(3.5deg);
+        -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+        margin: 2%;
+        padding: 1.5%;
+        border-radius: 3%;
+        background-color: $bgColor;
+        height: 45vh;
+        width: 100vw;
+        column-count: 2;
+        max-width: 100%;
+        .userComments{  
+            border:1px double black;
+            position: relative;
+            background-color: azure;
+            height: 99%;
+            overflow-y: scroll;
+        }
+        .userPosts{
+            border:1px double black;
+            position: relative;
+            background-color: azure;
+            height: 99%;
+            overflow-y: scroll;
+        }
+    }
+}  
+                
+.title {
+    position: relative;
+     text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style:italic;
+    background-image: url('../assets/Images/dark-leaves.jfif');
+    background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .form{
+        @include flexCenter(column);
+        margin: 5%;
+        background-color: $bgColor;
+        width: 40%;
+        min-width: 200px;
+        h3{
+            font-size: xx-large;
+        };
+        .property{
+            position: relative;
+            text-align: left;
+            font-size: x-large;
+            padding: 5%;
+            width: 70%;
+            border: 2px solid black;
+        }
+        .postButton{
+            @include buttonBehave();
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .title{
+            font-size: 1.5rem;
+        }
+        .background{
+            background-repeat: repeat-y;
+        }
+        header{
+            width: 100%;
+            .row1{
+                column-count: 1;
+            }
+        }
+        
+        .main{
+            @include flexCenter(column);
+            .statBox{
+                width: 100%;
+                height: fit-content;
+                .statList{
+                    li{
+                        margin-top: 2%;
+                    }
+                }
+            }
+            .activity{
+                column-count: 1;
+                height: fit-content;
+            }
+        }
+    };
+
+    
