@@ -30,6 +30,17 @@ User.init(
         len: [8],
       },
     },
+    bio: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    plant_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'plant',
+        key: 'id'
+      }
+    },
   },
   {
     hooks: {

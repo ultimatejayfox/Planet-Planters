@@ -9,6 +9,7 @@ router.post('/', withAuth, async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
+      plant_id: req.params.id
     });
 
     res.status(200).json(newComment);
@@ -17,27 +18,23 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-
-// or 
-
-
-router.post('/:id', async (req, res) => {
+// starting delete route
+router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const plantData = await Plant.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['id', 'username'],
-        },
-      ],
+    const plantData = await Comment.destroy({
+      where: {
+        id: req, // new idea?
+        plant_id: req.params.id,
+        user_id: req.session.user_id, // not totally sure about the use of user_id here, should it be user.id?
+      },
     });
 
-    const plant = plantData.get({ plain: true });
+    if (!plantData) {
+      res.status(404).json({ message: 'No plant found with this id!' });
+      return;
+    }
 
-    res.render('plant', {
-      ...plant,
-      logged_in: req.session.logged_in
-    });
+    res.status(200).json(plantData);
   } catch (err) {
     res.status(500).json(err);
   }

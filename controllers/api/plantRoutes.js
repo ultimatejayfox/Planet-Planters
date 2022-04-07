@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Plant } = require('../../models');
+const { Plant, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -9,6 +9,13 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
+    const amendUser = await User.update({
+      this.plant_id = newPlant.id,
+      where: [
+        req.session.user_id = User.id
+      ],
+    })
+
     res.status(200).json(newPlant);
   } catch (err) {
     res.status(400).json(err);
@@ -17,6 +24,9 @@ router.post('/', withAuth, async (req, res) => {
 
 // still needs to Comment.findAll for each plant
 // need to find all comments that match a certain plant when viewing that plant
+
+// TODO add a counter to creation of plant, to count a users posts
+// ALSO need a counter comments on creation
 router.get('/:id', async (req, res) => {
   try {
     const plantData = await Plant.findByPk(req.params.id, {
