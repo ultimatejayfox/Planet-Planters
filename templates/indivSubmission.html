@@ -5,18 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
-    <title>Document</title>
+    <title>Plant It - {{plant.common_name}}</title>
 </head>
 <body>
     <header>
-        <h1>Common Name/Latin Name</h1>
+        <h1 class="title">{{plant.common_name}}/{{plant.latin_name}}</h1>
     </header>
     <div class="main">
         <div class="statBox">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, iure minima similique quaerat sapiente reprehenderit! Ipsa accusamus recusandae quisquam sequi accusantium, nulla impedit, eligendi aliquid ut iste, omnis quasi pariatur!</p>
+            <div class="creationBox">
+                <p>related items based on matchnig first word's of latin name</p>
+            </div>
         </div>
         <div class="activity">
-            
+            <div class="creationBox">
+                <img src="" alt="picture pulled from botanic api">
+                <div class="description">
+                    <p>{{plant.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in culpa blanditiis sit, esse perspiciatis vel distinctio dignissimos, tenetur dolorum adipisci corporis modi laboriosam porro vero? Quidem itaque quasi, molestiae, reprehenderit corporis sapiente maxime vero nihil voluptate iste dolorem veritatis possimus consequuntur voluptates, nam dolore doloribus officiis a cupiditate exercitationem.</p>
+                    <p>{{plant.date_submitted}}</p>
+                </div>
+
+            </div>
+            <div class="userPosts">
+                <form>
+                    <!-- <h4>Leave a comment</h4> -->
+                    
+                    <div class="property">
+                        <textarea class="" id="plant-desc" name="plant-desc"></textarea>
+                      </div>
+                      <button class="postButton">Post</button>
+                    </form>
+                {{comment.body}}
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse nulla fugit commodi illo eos veritatis in enim quam velit. Quo ex aliquam impedit nesciunt nostrum recusandae distinctio laborum ut quae asperiores quibusdam totam, molestiae vel qui eius rem provident fugit? Cupiditate, ut voluptatibus! Quo nemo debitis voluptas perspiciatis repellat fugiat fugit ipsa aliquam nostrum, et maxime libero magni rem amet iste doloremque vel quibusdam, praesentium iusto! Non mollitia eaque alias dicta necessitatibus. In consequatur alias dolorem eos fugiat, officia quidem corporis voluptatum, ullam cum, dignissimos saepe? In neque debitis doloribus laudantium? Maxime, totam suscipit nam, laboriosam cumque natus architecto delectus, amet magni repudiandae voluptas vitae aliquam quisquam sequi aspernatur libero vel explicabo. Dignissimos nihil ipsa dolorum nobis exercitationem ducimus, eius libero minus quod doloremque nulla ipsum est quam. Commodi vitae exercitationem rem. Quia quas a explicabo nemo eveniet ab quod. Enim accusamus quas possimus quos, at ipsam provident placeat dicta dolores officia magni atque hic commodi voluptates vitae suscipit, deleniti rem alias dolor voluptate fugiat. Voluptates expedita accusantium amet architecto, labore voluptas quibusdam at accusamus est repellat. Aperiam, ipsam doloribus tempora id, iusto ipsa, eveniet sapiente repellat totam ullam exercitationem magnam numquam impedit. Voluptas aliquam eaque, harum impedit consequuntur similique.</p>
+            </div>
         </div>
     </div>
 </body>
