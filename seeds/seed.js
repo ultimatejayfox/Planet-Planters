@@ -23,3 +23,4 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+console.log(plantData);

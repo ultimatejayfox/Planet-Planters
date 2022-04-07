@@ -30,15 +30,18 @@ AND THEN comment on other people's posts as well
 - `Sequelize`
 - `bcrypt`
 - `dotenv`
+- `Handlebars`
+- `Express Handblebars`
+- `Express-session`
+- `Path`
+- `SASS`
 
 ## Installation 
 - Begin by opening the terminal 
 - In the terminal type `npm init -y` 
 - then `npm i express`
-- `npm i mysql2`
-- `npm i sequelize`
-- `npm i bcrypt`
-- `npm i dotenv`
+- `npm i mysql2` 
+- Then complete the same command for path, sequelize, mysql2, bcrypt, dotenv, express, handlebars, express-handlebars, and express-sesion
 
 ## Usage
 
