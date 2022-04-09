@@ -1,6 +1,5 @@
 $buttonColor : azure;
 $utilColor : green;
-// $bgColor : rgba(255, 127, 80, .7);
 $bgColor : rgba(238, 230, 227, 0.7);
 
 @mixin flexCenter($direction) {
@@ -13,8 +12,6 @@ $bgColor : rgba(238, 230, 227, 0.7);
 
 @mixin buttonBehave{
         margin: 2%;
-        // padding-inline-start: 5%;
-
         border-radius: 15%;
         height: 2.5em;
         width: 7em;
@@ -22,21 +19,14 @@ $bgColor : rgba(238, 230, 227, 0.7);
         &:active{
             background-color: $utilColor;
         };
-        
-}
+        background-image: linear-gradient(
+        rgba(236, 185, 102, 0.3) 0%,
+        rgba(236, 220, 102, 0.6) 100%
+        );   
+    }
 
-.gradient{
-    background-image: linear-gradient(
-    rgba(236, 185, 102, 0.3) 0%,
-    rgba(236, 220, 102, 0.6) 100%
-    );
-}
-
-.background{
-    background-image: url('../assets/Images/sunnylandscape.jpg');
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+:root{
+    background-color: rgb(10, 73, 33);
 }
 
 header{
@@ -47,9 +37,16 @@ header{
     box-shadow: 20px 20px 20px rgb(0, 0, 0);
     transform: rotateY(3.5deg) rotateX(3.5deg);
     -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+    background-image: url('../assets/Images/treelogo.jpg'),url('../assets/Images/treelogo.jpg');
+    background-position:left, right;
+    background-repeat: no-repeat;
+    background-size:contain;
     .row1{
         column-count: 2;
         column-gap: calc(100vw/10);
+        .btnGroup{
+            margin: 2%;
+        }
         .homebtn{
             @include buttonBehave();
         }
@@ -62,10 +59,13 @@ header{
         h1{
             padding: 5%;
         }
+        .hometitle{
+            width: 6em;
+        }
     };
     .row2{
         border:5px double black;
-        padding: 2%;
+        padding: 1%;
         margin: .5em;
     };
 };
@@ -75,7 +75,7 @@ header{
     .statBox{
         margin: 2%;
         padding: 1.5%;
-        border-radius: 5%;
+        border-radius: 3%;
         background-color: $bgColor;
         height: 45vh;
         width: 45vw;
@@ -104,7 +104,31 @@ header{
                 background-color: $buttonColor
             }
         }
+        .userPosts{
+            border:1px double black;
+            position: relative;
+            background-color: azure;
+            height: 99%;
+            overflow-y: scroll;
+            width: 45vw;
+        }
     };
+    .creationBox{  
+        border:1px double black;
+        position: relative;
+        background-color: azure;
+        height: 99%;
+        img{
+            float:left;
+            background-color: aqua;
+            min-height: 40%;
+            min-width: 40%;
+            margin-top: 20%;
+        };
+        .description{
+            margin-top: 10%;
+        }
+    }
     .activity{
         box-shadow: 20px 20px 20px rgb(0, 0, 0);
         transform: rotateY(3.5deg) rotateX(3.5deg);
@@ -117,22 +141,25 @@ header{
         width: 100vw;
         column-count: 2;
         max-width: 100%;
-        .userComments{  
-            border:1px double black;
-            position: relative;
-            background-color: azure;
-            height: 99%;
-            overflow-y: scroll;
-        }
         .userPosts{
             border:1px double black;
             position: relative;
             background-color: azure;
             height: 99%;
             overflow-y: scroll;
-        }
-    }
-}  
+            form{
+                margin: 1%;
+                button{
+                    @include buttonBehave();
+                }
+                textarea{
+                    width: 90%;
+                    height: 5em;
+                };
+            };
+        };
+    };
+};
                 
 .title {
     position: relative;
@@ -149,10 +176,9 @@ header{
 
     .form{
         @include flexCenter(column);
-        margin: 5%;
-        background-color: $bgColor;
-        width: 40%;
-        min-width: 200px;
+        background-color: azure;
+        width: 100%;
+        height: 100%;
         h3{
             font-size: xx-large;
         };
@@ -160,16 +186,22 @@ header{
             position: relative;
             text-align: left;
             font-size: x-large;
-            padding: 5%;
+            padding: 4%;
             width: 70%;
             border: 2px solid black;
+            input{
+                float: right;
+            }
+            textarea{
+                float: right;
+            }
         }
         .postButton{
             @include buttonBehave();
         }
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 940px) {
         .title{
             font-size: 1.5rem;
         }
@@ -178,6 +210,8 @@ header{
         }
         header{
             width: 100%;
+            background-image: none;
+            border-radius: 0%;
             .row1{
                 column-count: 1;
             }
@@ -188,15 +222,25 @@ header{
             .statBox{
                 width: 100%;
                 height: fit-content;
+                border-radius: 0%;
                 .statList{
                     li{
                         margin-top: 2%;
                     }
                 }
+                .userPosts{
+                    width: 100%;
+                }
             }
             .activity{
                 column-count: 1;
                 height: fit-content;
+                border-radius: 0%;
+                .creationBox{
+                    img{
+                        margin-top: 0;
+                    }
+                }
             }
         }
     };

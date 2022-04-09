@@ -1,13 +1,5 @@
-.gradient {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
-  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
-}
-
-.background {
-  background-image: url("../assets/Images/sunnylandscape.jpg");
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+:root {
+  background-color: #0a4921;
 }
 
 header {
@@ -32,6 +24,10 @@ header {
           box-shadow: 20px 20px 20px black;
   transform: rotateY(3.5deg) rotateX(3.5deg);
   -webkit-transform: rotateY(3.5deg) rotateX(3.5deg);
+  background-image: url("../assets/Images/treelogo.jpg"), url("../assets/Images/treelogo.jpg");
+  background-position: left, right;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 header .row1 {
@@ -41,12 +37,18 @@ header .row1 {
           column-gap: calc(100vw/10);
 }
 
+header .row1 .btnGroup {
+  margin: 2%;
+}
+
 header .row1 .homebtn {
   margin: 2%;
   border-radius: 15%;
   height: 2.5em;
   width: 7em;
   background-color: azure;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
+  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
 }
 
 header .row1 .homebtn:active {
@@ -59,6 +61,8 @@ header .row1 .login {
   height: 2.5em;
   width: 7em;
   background-color: azure;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
+  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
 }
 
 header .row1 .login:active {
@@ -71,6 +75,8 @@ header .row1 .newPost {
   height: 2.5em;
   width: 7em;
   background-color: azure;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
+  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
 }
 
 header .row1 .newPost:active {
@@ -81,9 +87,13 @@ header .row1 h1 {
   padding: 5%;
 }
 
+header .row1 .hometitle {
+  width: 6em;
+}
+
 header .row2 {
   border: 5px double black;
-  padding: 2%;
+  padding: 1%;
   margin: .5em;
 }
 
@@ -107,7 +117,7 @@ header .row2 {
 .main .statBox {
   margin: 2%;
   padding: 1.5%;
-  border-radius: 5%;
+  border-radius: 3%;
   background-color: rgba(238, 230, 227, 0.7);
   height: 45vh;
   width: 45vw;
@@ -144,6 +154,34 @@ header .row2 {
   background-color: azure;
 }
 
+.main .statBox .userPosts {
+  border: 1px double black;
+  position: relative;
+  background-color: azure;
+  height: 99%;
+  overflow-y: scroll;
+  width: 45vw;
+}
+
+.main .creationBox {
+  border: 1px double black;
+  position: relative;
+  background-color: azure;
+  height: 99%;
+}
+
+.main .creationBox img {
+  float: left;
+  background-color: aqua;
+  min-height: 40%;
+  min-width: 40%;
+  margin-top: 20%;
+}
+
+.main .creationBox .description {
+  margin-top: 10%;
+}
+
 .main .activity {
   -webkit-box-shadow: 20px 20px 20px black;
           box-shadow: 20px 20px 20px black;
@@ -160,7 +198,7 @@ header .row2 {
   max-width: 100%;
 }
 
-.main .activity .userComments {
+.main .activity .userPosts {
   border: 1px double black;
   position: relative;
   background-color: azure;
@@ -168,12 +206,27 @@ header .row2 {
   overflow-y: scroll;
 }
 
-.main .activity .userPosts {
-  border: 1px double black;
-  position: relative;
+.main .activity .userPosts form {
+  margin: 1%;
+}
+
+.main .activity .userPosts form button {
+  margin: 2%;
+  border-radius: 15%;
+  height: 2.5em;
+  width: 7em;
   background-color: azure;
-  height: 99%;
-  overflow-y: scroll;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
+  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
+}
+
+.main .activity .userPosts form button:active {
+  background-color: green;
+}
+
+.main .activity .userPosts form textarea {
+  width: 90%;
+  height: 5em;
 }
 
 .title {
@@ -204,10 +257,9 @@ header .row2 {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  margin: 5%;
-  background-color: rgba(238, 230, 227, 0.7);
-  width: 40%;
-  min-width: 200px;
+  background-color: azure;
+  width: 100%;
+  height: 100%;
 }
 
 .form h3 {
@@ -218,9 +270,17 @@ header .row2 {
   position: relative;
   text-align: left;
   font-size: x-large;
-  padding: 5%;
+  padding: 4%;
   width: 70%;
   border: 2px solid black;
+}
+
+.form .property input {
+  float: right;
+}
+
+.form .property textarea {
+  float: right;
 }
 
 .form .postButton {
@@ -229,13 +289,15 @@ header .row2 {
   height: 2.5em;
   width: 7em;
   background-color: azure;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 185, 102, 0.3)), to(rgba(236, 220, 102, 0.6)));
+  background-image: linear-gradient(rgba(236, 185, 102, 0.3) 0%, rgba(236, 220, 102, 0.6) 100%);
 }
 
 .form .postButton:active {
   background-color: green;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 940px) {
   .title {
     font-size: 1.5rem;
   }
@@ -244,6 +306,8 @@ header .row2 {
   }
   header {
     width: 100%;
+    background-image: none;
+    border-radius: 0%;
   }
   header .row1 {
     -webkit-column-count: 1;
@@ -270,9 +334,13 @@ header .row2 {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    border-radius: 0%;
   }
   .main .statBox .statList li {
     margin-top: 2%;
+  }
+  .main .statBox .userPosts {
+    width: 100%;
   }
   .main .activity {
     -webkit-column-count: 1;
@@ -280,6 +348,10 @@ header .row2 {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    border-radius: 0%;
+  }
+  .main .activity .creationBox img {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
