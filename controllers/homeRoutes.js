@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const plant = plantData.map((plant) => plant.get({ plain: true }));
-
+    const plants = plantData.map((plant) => plant.get({ plain: true }));
+    console.log(plants);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      plant, 
+      plants, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
