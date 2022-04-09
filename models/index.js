@@ -7,7 +7,8 @@ User.hasMany(Plant, {
 });
 
 Plant.belongsToMany(User, {
-    foreignKey: 'user_id',
+    through: 'user_id',
+    // foreignKey: 'user_id',
 });
 
 User.hasMany(Comment, {
@@ -15,7 +16,8 @@ User.hasMany(Comment, {
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id',
+    through: 'user_id',
+    // foreignKey: 'user_id',
 });
 
 Plant.hasMany(Comment, {
@@ -24,7 +26,8 @@ Plant.hasMany(Comment, {
 });
 
 Comment.belongsTo(Plant, {
-    foreignKey: 'plant_id',
+    through: 'plant_id',
+    // foreignKey: 'plant_id',
 });
 
 module.exports = { User, Plant, Comment };

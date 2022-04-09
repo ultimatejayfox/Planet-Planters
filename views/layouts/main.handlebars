@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant It</title>
+  <link rel="stylesheet" href="/css/style.css">
+  {{!-- <script src="/js/homepage.js"></script> --}}
+</head>
+<body>
+  <header>
+    <div class="row1">
+      <div class="title">
+          <h1 class="hometitle">Plant It</h1>
+      </div>
+      <div class="btnGroup">
+        {{#if logged_in}}
+          <button class="homebtn"><a href="/profile">My Profile</a></button>
+          <button class="login" id="logoutBtn">Logout</button>
+        {{else}}
+          <button class="login" id="loginBtn">Login</button>
+        {{/if}}
+      </div>
+    </div>
+    <div class="row2">
+        <h2>Stop and read about the roses</h2>
+    </div>
+  </header>
+  <main class='main'>
+    {{!-- <div class="allPosts"> --}}
+      {{!-- <div> --}}
+      {{{ body }}}
+    {{!-- </div> --}}
+  </main>
+
+<script src="/js/logout.js"></script>
+<script src="/js/homepage.js"></script>
+</body>
+
+{{!-- {{/if}} --}}
+{{!-- <script src="/js/login.js"></script> --}}
+
+</html>

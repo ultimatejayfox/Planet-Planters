@@ -1,48 +1,80 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Project:</h3>
-
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Plant It - Profile</title>
+</head> --}}
+{{!-- <body> --}}
+    {{!-- <header>
+        <div class="row1">
+        <h1>
+           <span class="title">StankShackle</span>
+        </h1>
+        <div class="btnGroup">
+            <button class="homebtn">Home</button>
+            {{!-- <button class="login">Login</button> --}}
+            <button class="login">Logout</button>
+        </div>
+        </div>
+        <div class="row2">
+        <h3 class="bio">
+            <p>So glad you're here. At your profile. Which you made. And now you can look at it. So that's nice.</p>
+        </h3>
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
+    </header> --}}
+<div class="main">
+    {{!-- <div class="statBox">
+        <h4>User Stats</h4>
+        <ul class="statList">
+            <!-- followers and following are properties of user? -->
+            <li class="followers">Followers:</li>
+            <li class="following">Following:</li>
+            <li class="postNum">Number of Posts:</li>
+            <!-- counter whenevr a plant gets created by a useer -->
+            <li class="likeNum">Number of Liked Posts:</li>
+            <!-- counter on liked posts that gets incremented -->
+        </ul>
+    </div> --}}
+    <div class="activity">
+        <!-- comment box will become make a new post form -->
+        <div class="creationBox">
+            <form class="form">
+                <h3>Post a Plant</h3>
+                <div class="property">
+                  <label for="common-name">Common Name:</label>
+                  <input class="" type="text" id="common-name" name="common-name" />
+                </div>
+                <div class="property">
+                  <label for="latin-name">Latin Name:</label>
+                  <input class="" type="text" id="latin-name" name="latin-name" />
+                </div>
+                <div class="property">
+                  <label for="plant-desc">Description:</label>
+                  <textarea class="" id="plant-desc" name="plant-desc"></textarea>
+                </div>
+                <div class="">
+                  <button type="submit" class="postButton">Post It</button>
+                </div>
+              </form>
+        </div>
+        {{#if plants.length}}
+        <div class="userPosts">
+            {{#each plants as |plant| }}
+                <div class="singlePost">
+                    {{!-- the image will need to have logic behind name matching the name of the plant with a plant from the botcanic api to list the url as the source of the image --}}
+                    <img src="" alt="">
+                    <h2>{{plant.common_name}}</h2>
+                    <h3>{{plant.latin_name}}</h3>
+                    <p>{{plant.description}}</p>
+                    <p>{{format_date plant.date_submitted}}</p>
+                </div>
+            {{/each}}
+        </div>
+         {{/if}}
+    </div>
 </div>
-
-<script src="/public/js/profile.js"></script>
+{{!-- </body> --}}
+{{!-- </html> --}}
