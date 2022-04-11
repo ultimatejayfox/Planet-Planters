@@ -1,7 +1,19 @@
-<body>
-    <header>
-        <h1 class="title">{{plant.common_name}}</h1>
-        <h3 class="row2">{{plant.latin_name}}</h3>
+ <header>
+        <div class="row1">
+        <h3>
+           <span class="title">{{common_name}}</span>
+        </h3>
+        <div class="btnGroup">
+            <button class="homebtn"><a href="/">Home</a></button>
+            {{!-- <button class="login">Login</button> --}}
+            <button class="login" id="logoutBtn">Logout</button>
+        </div>
+        </div>
+        <div class="row2">
+        <h3 class="bio">
+           {{latin_name}}
+        </h3>
+    </div>
     </header>
     <div class="main">
         <div class="statBox">
@@ -13,14 +25,15 @@
             <div class="creationBox">
                 <img src="" alt="picture pulled from botanic api">
                 <div class="description">
-                    <p>{{plant.description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in culpa blanditiis sit, esse perspiciatis vel distinctio dignissimos, tenetur dolorum adipisci corporis modi laboriosam porro vero? Quidem itaque quasi, molestiae, reprehenderit corporis sapiente maxime vero nihil voluptate iste dolorem veritatis possimus consequuntur voluptates, nam dolore doloribus officiis a cupiditate exercitationem.</p>
-                    <p>{{plant.date_submitted}}</p>
+                    <p>{{description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in culpa blanditiis sit, esse perspiciatis vel distinctio dignissimos, tenetur dolorum adipisci corporis modi laboriosam porro vero? Quidem itaque quasi, molestiae, reprehenderit corporis sapiente maxime vero nihil voluptate iste dolorem veritatis possimus consequuntur voluptates, nam dolore doloribus officiis a cupiditate exercitationem.</p>
+                    <p>{{date_submitted}}</p>
                 </div>
 
             </div>
             <div class="userPosts">
                 <form>
                     <!-- <h4>Leave a comment</h4> -->
+                    
                     <div class="property">
                         <textarea class="" id="plant-desc" name="plant-desc"></textarea>
                       </div>
@@ -31,4 +44,3 @@
             </div>
         </div>
     </div>
-</body>

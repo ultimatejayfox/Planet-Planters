@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
-    console.log(plants);
+    // console.log(plants);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       plants, 

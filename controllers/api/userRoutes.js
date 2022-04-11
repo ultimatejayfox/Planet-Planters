@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// const botanicZoo = require("botanic-zoo-api");
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -19,7 +21,13 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
-    console.log(userData);
+
+    // botanicZoo
+    // .getPlant("oak")
+    // .then((response) => console.log(response))
+    // .catch((err) => console.error(err));
+
+    // console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -28,7 +36,7 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-console.log(validPassword);
+// console.log(validPassword);
     if (!validPassword) {
       res
         .status(400)
@@ -44,7 +52,7 @@ console.log(validPassword);
     });
 
   } catch (err) {
-    console.log('Err two - line 47 userroutes')
+    // console.log('Err two - line 47 userroutes')
     res.status(400).json(err);
   }
 });

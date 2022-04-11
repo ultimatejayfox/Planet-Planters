@@ -39,6 +39,20 @@ header .row1 {
 
 header .row1 .btnGroup {
   margin: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
 }
 
 header .row1 .homebtn {
@@ -190,15 +204,16 @@ header .row2 {
 
 .main .allPosts .singlePost {
   border: 1px solid black;
-  text-align: left;
+  text-align: center;
 }
 
 .main .allPosts .singlePost img {
   float: left;
   background-color: aqua;
-  max-height: 35%;
-  max-width: 35%;
-  margin: 1%;
+  max-height: 16.5%;
+  max-width: 16.5%;
+  overflow-y: hidden;
+  margin: 2%;
 }
 
 .main .creationBox {
@@ -213,7 +228,9 @@ header .row2 {
   background-color: aqua;
   min-height: 40%;
   min-width: 40%;
-  margin-top: 20%;
+  margin-top: 10%;
+  margin-right: 2%;
+  border: 3px solid black;
 }
 
 .main .creationBox .description {
@@ -407,6 +424,9 @@ header .row2 {
   }
   .main .activity .creationBox img {
     margin-top: 0;
+  }
+  .main .allPosts {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

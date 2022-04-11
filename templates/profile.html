@@ -11,7 +11,7 @@
     <header>
         <div class="row1">
         <h1>
-           <span class="title">StankShackle</span>
+           <span class="title">Amiko</span>
         </h1>
         <div class="btnGroup">
             <button class="homebtn">Home</button>
@@ -26,22 +26,18 @@
     </div>
     </header>
 <div class="main">
-    <div class="statBox">
+    <!-- <div class="statBox">
         <h4>User Stats</h4>
         <ul class="statList">
-            <!-- followers and following are properties of user? -->
             <li class="followers">Followers:</li>
             <li class="following">Following:</li>
             <li class="postNum">Number of Posts:</li>
-            <!-- counter whenevr a plant gets created by a useer -->
             <li class="likeNum">Number of Liked Posts:</li>
-            <!-- counter on liked posts that gets incremented -->
         </ul>
-        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut nemo omnis rerum aliquam laborum libero cumque et exercitationem expedita culpa, possimus esse reiciendis qui blanditiis voluptates, illum temporibus nulla perspiciatis. Ipsum natus quaerat eius, quas cumque odit fugiat? Cumque, alias ad quis dolorem eaque facere reiciendis fuga numquam magni maiores, a, veritatis neque suscipit architecto fugiat perspiciatis vel ducimus ex?</p> -->
-    </div>
-    <div class="activity">
+        </div> -->
+    <!-- <div class="activity"> -->
         <!-- comment box will become make a new post form -->
-        <div class="creationBox">
+        <div class="statBox">
             <form class="form">
                 <h3>Post a Plant</h3>
                 <div class="property">
@@ -61,11 +57,38 @@
                 </div>
               </form>
         </div>
-        <div class="userPosts">
-            
+        <div class="statBox">
+            <div class="allPosts">
+                <div class="singlePost">
+                    <img id="plantImg" src="" alt="">
+                    <h2>daylily</h2>
+                    <h3 id="plantName">Conium Maculatum</h3>
+                    <p>{{plant.description}}</p>
+                    <p>January 8, 2022</p>
+                </div>
+
+                <div class="singlePost">
+                    <img id="plantImg" src="" alt="">
+                    <h2>daylily</h2>
+                    <h3 id="plantName">Artemisia vulgaris</h3>
+                    <p>{{plant.description}}</p>
+                    <p>January 8, 2022</p>
+                </div>
+
+                <div class="singlePost">
+                    <img id="plantImg" src="" alt="">
+                    <h2>daylily</h2>
+                    <h3 id="plantName">Conium Maculatum</h3>
+                    <p>{{plant.description}}</p>
+                    <p>January 8, 2022</p>
+                </div>
+            </div>
         </div>
         <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat beatae dolor id voluptatem perferendis mollitia quas, accusantium impedit dolores et molestiae itaque esse! Officiis quasi neque, culpa odio consequuntur, dolorum perspiciatis doloremque, minus itaque eligendi veniam ipsa obcaecati ratione harum illo suscipit placeat dicta aspernatur ad eius necessitatibus aliquid cum ab accusamus? Aperiam quos quia itaque, nobis nemo eligendi amet.</p> -->
-    </div>
+    <!-- </div> -->
 </div>
+
+<script src="../public/js/profile.js"></script>
+
 </body>
 </html>
