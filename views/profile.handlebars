@@ -8,15 +8,15 @@
     <title>Plant It - Profile</title>
 </head> --}}
 {{!-- <body> --}}
-    {{!-- <header>
+    <header>
         <div class="row1">
         <h1>
-           <span class="title">StankShackle</span>
+           <span class="title">{{username}}</span>
         </h1>
         <div class="btnGroup">
-            <button class="homebtn">Home</button>
+            <button class="homebtn"><a href="/">Home</a></button>
             {{!-- <button class="login">Login</button> --}}
-            <button class="login">Logout</button>
+            <button class="login" id="logoutBtn">Logout</button>
         </div>
         </div>
         <div class="row2">
@@ -24,7 +24,7 @@
             <p>So glad you're here. At your profile. Which you made. And now you can look at it. So that's nice.</p>
         </h3>
     </div>
-    </header> --}}
+    </header>
 <div class="main">
     {{!-- <div class="statBox">
         <h4>User Stats</h4>
@@ -38,9 +38,9 @@
             <!-- counter on liked posts that gets incremented -->
         </ul>
     </div> --}}
-    <div class="activity">
+    {{!-- <div class="activity"> --}}
         <!-- comment box will become make a new post form -->
-        <div class="creationBox">
+        <div class="statBox">
             <form class="form">
                 <h3>Post a Plant</h3>
                 <div class="property">
@@ -60,8 +60,10 @@
                 </div>
               </form>
         </div>
+
+        <div class="statBox">
         {{#if plants.length}}
-        <div class="userPosts">
+        <div class="allPosts">
             {{#each plants as |plant| }}
                 <div class="singlePost">
                     {{!-- the image will need to have logic behind name matching the name of the plant with a plant from the botcanic api to list the url as the source of the image --}}
@@ -75,6 +77,6 @@
         </div>
          {{/if}}
     </div>
+{{!-- </div> --}}
 </div>
-{{!-- </body> --}}
-{{!-- </html> --}}
+{{!-- <script src="/js/logout.js"></script> --}}
