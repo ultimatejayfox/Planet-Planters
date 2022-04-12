@@ -140,9 +140,9 @@ header{
             img{
                 float:left;
                 background-color: aqua;
-                max-height: 16.5%;
-                max-width: 16.5%;
-                overflow-y: hidden;
+                height: 140px;
+                width: 140px;
+                // overflow-y: hidden;
                 // max-height: fit-content;
                 // max-width: 20%;
                 margin: 2%;

@@ -20,12 +20,13 @@ Plant.init(
         allowNull: true,
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true,
     },
     date_submitted: { // make sure these get the helper on them through handlebars
         type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.NOW,
       },
     user_id: {
         type: DataTypes.INTEGER,

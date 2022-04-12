@@ -1,19 +1,19 @@
 // empty on purpose
 
-const { post } = require("../../controllers");
+// const { post } = require("../../controllers");
 
 async function newFormHandler(event) {
     event.preventDefault();
     const common_name = document.querySelector("#common-name").value;
     const latin_name = document.querySelector("#latin-name").value;
-    const plant_desc = document.querySelector("#plant-desc").value;
+    const description = document.querySelector("#plant-desc").value;
 
-    const response = await fetch('/api/plant', {
+    const response = await fetch('/api/plants', {
         method: 'POST', 
         body: JSON.stringify({
             common_name,
             latin_name,
-            plant_desc
+            description
         }),
         headers: {
             'Content-Type' : 'application/json',
@@ -26,4 +26,4 @@ async function newFormHandler(event) {
     }
 }
 
-document.querySelector('.form').addEventListener('submit', newFormHandler);
+document.getElementById('postIt').addEventListener('click', newFormHandler);
