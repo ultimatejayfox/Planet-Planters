@@ -36,14 +36,6 @@ Plant.init(
                 key: 'id'
             },
         },
-        // comment_array: {
-        //     type: DataTypes.ARRAY,
-        //     allowNull: true,
-        //     // references: {
-        //     //     model: 'comment',
-        //     //     key: 'id'
-        //     // },
-        // },
     },
     {
     sequelize,

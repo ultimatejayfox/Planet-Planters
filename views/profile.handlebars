@@ -56,26 +56,26 @@
                   <textarea class="" id="plant-desc" name="plant-desc"></textarea>
                 </div>
                 <div class="">
-                  <button type="submit" class="postButton">Post It</button>
+                  <button type="submit" id="postIt" class="postButton">Post It</button>
                 </div>
               </form>
         </div>
-
         <div class="statBox">
         {{#if plants.length}}
-            <div class="allPosts">
-                {{#each plants as |plant| }}
-                    <div class="singlePost">
-                        {{!-- the image will need to have logic behind name matching the name of the plant with a plant from the botcanic api to list the url as the source of the image --}}
-                        <img src="" alt="">
-                        <h2>{{plant.common_name}}</h2>
-                        <h3>{{plant.latin_name}}</h3>
-                        <p>{{plant.description}}</p>
-                        <p>{{format_date plant.date_submitted}}</p>
-                    </div>
-                {{/each}}
-            </div>
-        {{/if}}
+        <div class="allPosts">
+            {{#each plants as |plant| }}
+                <div class="singlePost">
+                    {{!-- the image will need to have logic behind name matching the name of the plant with a plant from the botcanic api to list the url as the source of the image --}}
+                    <img src="" alt="">
+                    <h2>{{plant.common_name}}</h2>
+                    <h3>{{plant.latin_name}}</h3>
+                    <p>{{plant.description}}</p>
+                    <p>{{format_date plant.date_submitted}}</p>
+                    <button class="delBtn">X</button>
+                </div>
+            {{/each}}
+        </div>
+         {{/if}}
     </div>
 {{!-- </div> --}}
 </div>

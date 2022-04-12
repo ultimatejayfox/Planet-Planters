@@ -32,7 +32,7 @@ Comment.init(
         date_submitted: { // make sure these get the helper on them through handlebars
             type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
+            defaultValue: DataTypes.NOW
         },
     },
     {
