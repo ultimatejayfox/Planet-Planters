@@ -210,9 +210,8 @@ header .row2 {
 .main .allPosts .singlePost img {
   float: left;
   background-color: aqua;
-  max-height: 16.5%;
-  max-width: 16.5%;
-  overflow-y: hidden;
+  height: 140px;
+  width: 140px;
   margin: 2%;
 }
 
@@ -429,3 +428,4 @@ header .row2 {
     width: 100%;
   }
 }
+/*# sourceMappingURL=style.css.map */
