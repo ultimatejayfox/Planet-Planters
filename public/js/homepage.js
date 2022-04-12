@@ -4,7 +4,7 @@
 // console.log(login);
 
 function replaceDocument() {
-    console.log('button was pressed')
+    console.log('button was pressed');
     document.location.replace('/profile');
 }
 
