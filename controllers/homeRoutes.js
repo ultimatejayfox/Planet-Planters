@@ -65,6 +65,10 @@ router.get('/plants/:id', async (req, res) => {
           model: User,
           attributes: ['id', 'username'],
         },
+        {
+          model: Comment,
+          attributes: ['description', 'user_id', 'plant_id', 'date_submitted']
+        }
       ],
     });
 
