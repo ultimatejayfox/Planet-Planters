@@ -1,11 +1,13 @@
-// const req = require("express/lib/request");
-
 async function createComment(event) {
-  // event.preventDefault();
-  const newComment = document.querySelector('#comment-desc');
-  console.log('this is your comment: ', newComment.textContent);
+  event.preventDefault();
+  
+  console.log('here is the event? ', event);
+
+  const newComment = document.getElementById('comment-desc').value;
+  console.log('this is your comment: ', newComment);
 
   const id = event.target.getAttribute('data-id');
+  console.log(id);
 
   const response = await fetch(`/api/plants/${id}`, {
     method: 'POST', 
@@ -24,4 +26,6 @@ async function createComment(event) {
   }
 }
 
-document.querySelector('#postButton').addEventListener('click', createComment())
+document
+  .getElementById('postButton')
+  .addEventListener('click', createComment);
