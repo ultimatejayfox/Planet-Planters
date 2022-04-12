@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Plant, User } = require('../models');
+const { Plant, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -55,6 +55,49 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/plants/:id', async (req, res) => {
+  try {
+    const plantData = await Plant.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'username'],
+        },
+      ],
+    });
+
+    const plant = plantData.get({ plain: true });
+
+    res.render('plant', {
+      ...plant,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// start of creat comment route
+router.post('/:id', withAuth, async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      description: req.body,
+      plant_id: req.params.id,
+      user_id: req.session.user_id,
+    });
+
+    const plant = plantData.get({ plain: true });
+
+    res.render('plant', {
+      ...plant,
+      logged_in: req.session.logged_in
+    });
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
