@@ -72,7 +72,7 @@ router.get('/plants/:id', async (req, res) => {
     });
 
     const plant = plantData.get({ plain: true });
-    console.log(plant);
+    // console.log(plant);
     res.render('plant', {
       ...plant,
       logged_in: req.session.logged_in

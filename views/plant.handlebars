@@ -5,10 +5,12 @@
         </h3>
         <div class="btnGroup">
             <button class="homebtn"><a href="/">Home</a></button>
+         {{#if logged_in}}
+            {{!-- <button class="homebtn"><a href="/">Home</a></button> --}}
             <button class="login" id="logoutBtn">Logout</button>
-            {{!-- {{#if !logged_in}}
-             <button class="login">Login</button>
-            {{/if}} --}}
+            {{else}}
+            <button class="login" id="loginBtn"><a href='/login'>Login</a></button>
+            {{/if}}
         </div>
         </div>
         <div class="row2">
@@ -28,7 +30,7 @@
                 {{!-- <div class="singlePost"> --}}
                 <img id="plantImg" src="" alt="picture pulled from botanic api">
                 <div class="description">
-                    <p>{{description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in culpa blanditiis sit, esse perspiciatis vel distinctio dignissimos, tenetur dolorum adipisci corporis modi laboriosam porro vero? Quidem itaque quasi, molestiae, reprehenderit corporis sapiente maxime vero nihil voluptate iste dolorem veritatis possimus consequuntur voluptates, nam dolore doloribus officiis a cupiditate exercitationem.</p>
+                    <p>{{description}}</p>
                     <p>{{date_submitted}}</p>
                 </div>
 
@@ -61,7 +63,11 @@
         </div>
     </div>
 
-
+{{!-- {{#if !logged_in}} --}}
+{{!-- <script src="/js/login.js"></script> --}}
+{{!-- {{/if}} --}}
+{{!-- {{#if logged_in}} --}}
 <script src="/js/logout.js"></script>
+{{!-- {{/if}} --}}
 <script src="/js/comment.js"></script>
 <script src="/js/plantFunc.js"></script>
