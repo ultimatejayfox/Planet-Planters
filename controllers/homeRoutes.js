@@ -66,7 +66,13 @@ router.get('/plants/:id', async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['description', 'id', 'user_id', 'plant_id', 'date_submitted']
+          attributes: ['description', 'id', 'user_id', 'plant_id', 'date_submitted'],
+          include: [
+            {
+              model: User,
+              attributes: ['id', 'username']
+            }
+          ]
         }
       ],
     });

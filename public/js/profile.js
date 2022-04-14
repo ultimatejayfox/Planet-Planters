@@ -20,24 +20,11 @@ async function newFormHandler(event) {
         },
     });
     if (response.ok) {
-        document.location.replace('/');
+        document.location.reload();
     } else { 
         alert('Failed to add plant!');
     }
 }
-
-document
-    .getElementById('postIt')
-    .addEventListener('click', newFormHandler);
-
-
-// async function deleteHandler(event) {
-//     event.preventDefault();
-
-//     const delBtn = document.querySelector('.delBtn');
-
-//     const repsonse = await fetch('/api/plant')
-// }
 
 async function delPlant(event) {
     event.preventDefault();
@@ -45,7 +32,7 @@ async function delPlant(event) {
     const id = event.target.getAttribute('data-id');
     console.log(id);
     const response = await fetch(`/api/comments/${id}`, {
-      method: 'DELETE',
+        method: 'DELETE',
     });
     if (response.ok) {
         console.log('response is ok');
@@ -53,8 +40,12 @@ async function delPlant(event) {
     } else {
         alert('Failed to delete comment!');
     }
-  }
+}
 
-  document
-  .querySelectorAll('.delBtn')
-  .forEach(item => item.addEventListener('click', delPlant));
+document
+    .getElementById('postIt')
+    .addEventListener('click', newFormHandler);
+
+document
+    .querySelectorAll('.delBtn')
+    .forEach(item => item.addEventListener('click', delPlant));
