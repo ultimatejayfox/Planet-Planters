@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const plants = plantData.map((plant) => plant.get({ plain: true }));
-    // console.log(plants);
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       plants, 
@@ -67,13 +66,13 @@ router.get('/plants/:id', async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['description', 'user_id', 'plant_id', 'date_submitted']
+          attributes: ['description', 'id', 'user_id', 'plant_id', 'date_submitted']
         }
       ],
     });
 
     const plant = plantData.get({ plain: true });
-
+    console.log(plant);
     res.render('plant', {
       ...plant,
       logged_in: req.session.logged_in
@@ -83,25 +82,5 @@ router.get('/plants/:id', async (req, res) => {
   }
 });
 
-// start of creat comment route
-router.post('/:id', withAuth, async (req, res) => {
-  try {
-    const newComment = await Comment.create({
-      description: req.body,
-      plant_id: req.params.id,
-      user_id: req.session.user_id,
-    });
-
-    const plant = plantData.get({ plain: true });
-
-    res.render('plant', {
-      ...plant,
-      logged_in: req.session.logged_in
-    });
-    res.status(200).json(newComment);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

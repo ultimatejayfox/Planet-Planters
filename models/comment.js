@@ -27,7 +27,7 @@ Comment.init(
         },
         description: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false, 
         },
         date_submitted: { // make sure these get the helper on them through handlebars
             type: DataTypes.DATE,

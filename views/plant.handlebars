@@ -5,8 +5,10 @@
         </h3>
         <div class="btnGroup">
             <button class="homebtn"><a href="/">Home</a></button>
-            {{!-- <button class="login">Login</button> --}}
             <button class="login" id="logoutBtn">Logout</button>
+            {{!-- {{#if !logged_in}}
+             <button class="login">Login</button>
+            {{/if}} --}}
         </div>
         </div>
         <div class="row2">
@@ -23,7 +25,8 @@
         </div> --}}
         <div class="activity">
             <div class="creationBox">
-                <img src="" alt="picture pulled from botanic api">
+                {{!-- <div class="singlePost"> --}}
+                <img id="plantImg" src="" alt="picture pulled from botanic api">
                 <div class="description">
                     <p>{{description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in culpa blanditiis sit, esse perspiciatis vel distinctio dignissimos, tenetur dolorum adipisci corporis modi laboriosam porro vero? Quidem itaque quasi, molestiae, reprehenderit corporis sapiente maxime vero nihil voluptate iste dolorem veritatis possimus consequuntur voluptates, nam dolore doloribus officiis a cupiditate exercitationem.</p>
                     <p>{{date_submitted}}</p>
@@ -31,26 +34,24 @@
 
             </div>
             <div class="userPosts">
-                <form>
-                    <!-- <h4>Leave a comment</h4> -->
-                    
-                    <div class="property">
+                {{#if logged_in}}
+
+                    <form>
+                        <div class="property">
                         <textarea class="" id="comment-desc" name="comment-desc"></textarea>
-                      </div>
-                      <button class="postButton" id="postButton" data-id="{{id}}">Post</button>
+                        </div>
+                        <button class="postButton" id="postButton" data-id="{{id}}">Post</button>
                     </form>
-                    
+                {{/if}}
+                
                 {{#if comments.length}}
                     <div class="allPosts">
-                        <p>fake comment</p>
                         {{#each comments as |comment| }}
                             <div class="singlePost">
-                                {{!-- {{#if user.id == comment.user_id}}
-                                    <h4>{{user.username}}</h4>
-                                {{/if}} --}}
                                 <h4>Comment created by: {{comment.user.username}}</h4>
                                 <p>{{comment.description}}</p>
                                 <p>Comment created on: {{format_date comment.date_submitted}}</p>
+                                <button class="delComment" data-id="{{comment.id}}">Delete</button>
                             </div>
                         {{/each}}
                     </div>
@@ -61,6 +62,6 @@
     </div>
 
 
-{{!-- <script src="/js/logout.js"></script> --}}
+<script src="/js/logout.js"></script>
 <script src="/js/comment.js"></script>
 <script src="/js/plantFunc.js"></script>

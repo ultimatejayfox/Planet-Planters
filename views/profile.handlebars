@@ -67,11 +67,11 @@
                 <div class="singlePost">
                     {{!-- the image will need to have logic behind name matching the name of the plant with a plant from the botcanic api to list the url as the source of the image --}}
                     <img src="" alt="">
-                    <h2>{{plant.common_name}}</h2>
+                    <h2><a href="/plants/{{plant.id}}"></a>{{plant.common_name}}</a></h2>
                     <h3>{{plant.latin_name}}</h3>
                     <p>{{plant.description}}</p>
                     <p>{{format_date plant.date_submitted}}</p>
-                    <button class="delBtn">X</button>
+                    <button class="delBtn" data-id="{{plant.id}}">X</button>
                 </div>
             {{/each}}
         </div>
@@ -79,5 +79,6 @@
     </div>
 {{!-- </div> --}}
 </div>
-{{!-- <script src="/js/logout.js"></script> --}}
+<script src="/js/logout.js"></script>
 <script src="/js/profile.js"></script>
+<script src="/js/plantFunc.js"></script>
