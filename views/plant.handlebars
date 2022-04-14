@@ -1,5 +1,5 @@
- <header>
-        <div class="row1">
+<header>
+    <div class="row1">
         <h3>
            <span class="title">{{common_name}}</span>
         </h3>
@@ -16,51 +16,48 @@
            {{latin_name}}
         </h3>
     </div>
-    </header>
-    <div class="main">
-        {{!-- <div class="statBox">
-            <div class="creationBox">
-                <p>related items based on matchnig first word's of latin name</p>
-            </div>
-        </div> --}}
-        <div class="activity">
-            <div class="creationBox">
-                {{!-- <div class="singlePost"> --}}
-                <img id="plantImg" src="" alt="picture pulled from botanic api">
-                <div class="description">
-                    <p>{{description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in culpa blanditiis sit, esse perspiciatis vel distinctio dignissimos, tenetur dolorum adipisci corporis modi laboriosam porro vero? Quidem itaque quasi, molestiae, reprehenderit corporis sapiente maxime vero nihil voluptate iste dolorem veritatis possimus consequuntur voluptates, nam dolore doloribus officiis a cupiditate exercitationem.</p>
-                    <p>{{date_submitted}}</p>
-                </div>
-
-            </div>
-            <div class="userPosts">
-                {{#if logged_in}}
-
-                    <form>
-                        <div class="property">
-                        <textarea class="" id="comment-desc" name="comment-desc"></textarea>
-                        </div>
-                        <button class="postButton" id="postButton" data-id="{{id}}">Post</button>
-                    </form>
-                {{/if}}
-                
-                {{#if comments.length}}
-                    <div class="allPosts">
-                        {{#each comments as |comment| }}
-                            <div class="singlePost">
-                                <h4>Comment created by: {{comment.user.username}}</h4>
-                                <p>{{comment.description}}</p>
-                                <p>Comment created on: {{format_date comment.date_submitted}}</p>
-                                <button class="delComment" data-id="{{comment.id}}">Delete</button>
-                            </div>
-                        {{/each}}
-                    </div>
-                {{/if}}
-                <p>filler text here</p>
+</header>
+<div class="main">
+    {{!-- <div class="statBox">
+        <div class="creationBox">
+            <p>related items based on matchnig first word's of latin name</p>
+        </div>
+    </div> --}}
+    <div class="activity">
+        <div class="creationBox">
+            {{!-- <div class="singlePost"> --}}
+            <img id="plantImg" src="" alt="picture pulled from botanic api">
+            <div class="description">
+                <p>{{description}}</p>
+                <p>{{format_date date_submitted}}</p>
             </div>
         </div>
+        <div class="userPosts">
+            {{#if logged_in}}
+                <form>
+                    <div class="property">
+                    <textarea class="" id="comment-desc" name="comment-desc"></textarea>
+                    </div>
+                    <button class="postButton" id="postButton" data-id="{{id}}">Post</button>
+                </form>
+            {{/if}}
+            
+            {{#if comments.length}}
+                <div class="allPosts">
+                    {{#each comments as |comment| }}
+                        <div class="singlePost">
+                            <p>{{comment.description}}</p>
+                            <p>Commented by: {{comment.user.username}}</p>
+                            <p>Commented on: {{format_date comment.date_submitted}}</p>
+                            <button class="delComment" data-id="{{comment.id}}">Delete</button>
+                        </div>
+                    {{/each}}
+                </div>
+            {{/if}}
+            <p>filler text here</p>
+        </div>
     </div>
-
+</div>
 
 <script src="/js/logout.js"></script>
 <script src="/js/comment.js"></script>
