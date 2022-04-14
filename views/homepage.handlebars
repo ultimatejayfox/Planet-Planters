@@ -18,24 +18,28 @@
 </div>
 </header>
 <div class="main">
-    {{!-- {{#if !logged_in}} --}}
-    {{!-- <div class="statBox">
-        <form class="form">
-            <h3>Login</h3>
-            <div class="property">
-              <label for="latin-name">Email:</label>
-              <input class="" type="text" id="latin-name" name="latin-name" />
-            </div>
-            <div class="property">
-              <label for="plant-desc">Password:</label>
-              <input class="" id="plant-desc" name="plant-desc" />
-            </div>
-            <div class="">
-              <button type="submit" class="postButton">Login</button>
-            </div>
-        </form>
-    </div> --}}
-    {{!-- {{/if}} --}}
+    {{#if logged_in}}
+    <div class="statBox">
+            <form class="form">
+                <h3>Post a Plant</h3>
+                <div class="property">
+                  <label for="common-name">Common Name:</label>
+                  <input class="" type="text" id="common-name" name="common-name" />
+                </div>
+                <div class="property">
+                  <label for="latin-name">Latin Name:</label>
+                  <input class="" type="text" id="latin-name" name="latin-name" />
+                </div>
+                <div class="property">
+                  <label for="plant-desc">Description:</label>
+                  <textarea class="" id="plant-desc" name="plant-desc"></textarea>
+                </div>
+                <div class="">
+                  <button type="submit" id="postIt" class="postButton">Post It</button>
+                </div>
+              </form>
+        </div>
+    {{/if}}
     {{!-- <div class="statBox">
         <form class="form">
             <h3>Sign Up</h3>
@@ -79,4 +83,5 @@
 <script src="/js/logout.js"></script>
 {{/if}}
 <script src="/js/homepage.js"></script>
+<script src="/js/plantFunc.js"></script>
 

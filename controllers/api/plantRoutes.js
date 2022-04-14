@@ -59,26 +59,39 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-//sending this to homeroute
+// sending this to homeroute
 router.post('/:id', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
-      description: req.body,
+      description: req.body.newComment,
       plant_id: req.params.id,
       user_id: req.session.user_id,
     });
-
-    const plant = plantData.get({ plain: true });
-
-    res.render('plant', {
-      ...plant,
-      logged_in: req.session.logged_in
-    });
+    console.log(newComment);
     res.status(200).json(newComment);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// router.post('/:id', withAuth, async (req, res) => {
+//   try {
+//     const newComment = await Comment.create({
+//       ...req.body,
+//       plant_id: req.params.id,
+//       user_id: req.session.user_id
+//     });
+
+//     const plant = plantData.get({ plain: true });
+
+//     res.render('plant', {
+//       ...plant,
+//       logged_in: req.session.logged_in
+//     });
+//     res.status(200).json(newComment);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
