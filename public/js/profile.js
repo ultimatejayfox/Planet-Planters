@@ -31,7 +31,7 @@ async function delPlant(event) {
     // grab comment.id from the button
     const id = event.target.getAttribute('data-id');
     console.log(id);
-    const response = await fetch(`/api/comments/${id}`, {
+    const response = await fetch(`/api/plants/${id}`, {
       method: 'DELETE',
     });
     if (response.ok) {
@@ -40,8 +40,10 @@ async function delPlant(event) {
     } else {
         alert('Failed to delete comment!');
     }
-  }
+}
 
-  document
-  .querySelectorAll('.delBtn')
-  .forEach(item => item.addEventListener('click', delPlant));
+
+
+document
+    .querySelectorAll('.delBtn')
+    .forEach(item => item.addEventListener('click', delPlant));
