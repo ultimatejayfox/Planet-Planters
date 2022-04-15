@@ -1,7 +1,3 @@
-// empty on purpose
-
-// const { post } = require("../../controllers");
-
 async function newFormHandler(event) {
     event.preventDefault();
     const common_name = document.querySelector("#common-name").value;
@@ -26,11 +22,16 @@ async function newFormHandler(event) {
     }
 }
 
+document
+    .getElementById('postIt')
+    .addEventListener('click', newFormHandler);
+
 async function delPlant(event) {
     event.preventDefault();
     // grab comment.id from the button
     const id = event.target.getAttribute('data-id');
     console.log(id);
+
     const response = await fetch(`/api/comments/${id}`, {
         method: 'DELETE',
     });
@@ -42,9 +43,7 @@ async function delPlant(event) {
     }
 }
 
-document
-    .getElementById('postIt')
-    .addEventListener('click', newFormHandler);
+
 
 document
     .querySelectorAll('.delBtn')

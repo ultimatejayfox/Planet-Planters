@@ -5,10 +5,12 @@
         </h3>
         <div class="btnGroup">
             <button class="homebtn"><a href="/">Home</a></button>
+         {{#if logged_in}}
+            {{!-- <button class="homebtn"><a href="/">Home</a></button> --}}
             <button class="login" id="logoutBtn">Logout</button>
-            {{!-- {{#if !logged_in}}
-             <button class="login">Login</button>
-            {{/if}} --}}
+            {{else}}
+            <button class="login" id="loginBtn"><a href='/login'>Login</a></button>
+            {{/if}}
         </div>
         </div>
         <div class="row2">
@@ -16,49 +18,59 @@
            {{latin_name}}
         </h3>
     </div>
-</header>
-<div class="main">
-    {{!-- <div class="statBox">
-        <div class="creationBox">
-            <p>related items based on matchnig first word's of latin name</p>
-        </div>
-    </div> --}}
-    <div class="activity">
-        <div class="creationBox">
-            {{!-- <div class="singlePost"> --}}
-            <img id="plantImg" src="" alt="picture pulled from botanic api">
-            <div class="description">
-                <p>{{description}}</p>
-                <p>{{format_date date_submitted}}</p>
+
+    </header>
+    <div class="main">
+        {{!-- <div class="statBox">
+            <div class="creationBox">
+                <p>related items based on matchnig first word's of latin name</p>
+            </div>
+        </div> --}}
+        <div class="activity">
+            <div class="creationBox">
+                {{!-- <div class="singlePost"> --}}
+                <img id="plantImg" src="" height="200" width="200" alt="">
+                <div class="description">
+                    <p>{{description}}</p>
+                    <p>{{format_date date_submitted}}</p>
+                </div>
+
+            </div>
+            <div class="userPosts">
+                {{#if logged_in}}
+
+                    <form>
+                        <div class="property">
+                        <textarea class="" id="comment-desc" name="comment-desc"></textarea>
+                        </div>
+                        <button class="postButton" id="postButton" data-id="{{id}}">Comment</button>
+                    </form>
+                {{/if}}
+                
+                {{#if comments.length}}
+                    <div class="allPosts">
+                        {{#each comments as |comment| }}
+                            <div class="singlePost commentBox">
+                                <button class="delComment deleteButton" data-id="{{comment.id}}">X</button>
+                                <p>{{comment.description}}</p>
+                                <h4>{{comment.user.username}}</h4>
+                                <p>{{format_date comment.date_submitted}}</p>
+                                {{!-- <button class="delComment deleteButton" data-id="{{comment.id}}">X</button> --}}
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/if}}
             </div>
         </div>
-        <div class="userPosts">
-            {{#if logged_in}}
-                <form>
-                    <div class="property">
-                    <textarea class="" id="comment-desc" name="comment-desc"></textarea>
-                    </div>
-                    <button class="postButton" id="postButton" data-id="{{id}}">Post</button>
-                </form>
-            {{/if}}
-            
-            {{#if comments.length}}
-                <div class="allPosts">
-                    {{#each comments as |comment| }}
-                        <div class="singlePost">
-                            <p>{{comment.description}}</p>
-                            <p>Commented by: {{comment.user.username}}</p>
-                            <p>Commented on: {{format_date comment.date_submitted}}</p>
-                            <button class="delComment" data-id="{{comment.id}}">Delete</button>
-                        </div>
-                    {{/each}}
-                </div>
-            {{/if}}
-            <p>filler text here</p>
-        </div>
     </div>
-</div>
+
+{{!-- {{#if !logged_in}} --}}
+{{!-- <script src="/js/login.js"></script> --}}
+{{!-- {{/if}} --}}
+{{!-- {{#if logged_in}} --}}
 
 <script src="/js/logout.js"></script>
+{{!-- {{/if}} --}}
 <script src="/js/comment.js"></script>
-<script src="/js/plantFunc.js"></script>
+{{!-- <script src="/js/plantFunc.js"></script> --}}
+<script src="/js/singlePlant.js"></script>
