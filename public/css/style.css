@@ -365,6 +365,11 @@ header .row2 {
   background-color: green;
 }
 
+.deleteButton {
+  background-color: #e74d10;
+  float: right;
+}
+
 @media screen and (max-width: 940px) {
   .form {
     max-width: 95vw;

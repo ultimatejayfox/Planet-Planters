@@ -1,7 +1,7 @@
 <header>
     <div class="row1">
     <div class="title">
-        <h1 class="hometitle">Plants</h1>
+        <h1 class="hometitle">Planet Planter</h1>
     </div>
     <div class="btnGroup">
             {{#if logged_in}}
@@ -67,6 +67,7 @@
              {{#each plants as |plant| }}
                 <div class="singlePost">
                     {{!-- the image will need to have logic behind name matching the name of the plant with a plant from the botcanic api to list the url as the source of the image --}}
+                    <p></p>
                     <img id="plantImg" src="" alt="">
                     <h2><a href="/plants/{{plant.id}}">{{plant.common_name}}</a></h2>
                     <h3 id="plantName">{{plant.latin_name}}</h3>
@@ -84,4 +85,4 @@
 {{/if}}
 <script src="/js/homepage.js"></script>
 <script src="/js/plantFunc.js"></script>
-
+<script src="/js/profile.js"></script>

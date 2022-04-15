@@ -28,10 +28,10 @@
         <div class="activity">
             <div class="creationBox">
                 {{!-- <div class="singlePost"> --}}
-                <img id="plantImg" src="" alt="picture pulled from botanic api">
+                <img id="plantImg" src="" height="200" width="200" alt="">
                 <div class="description">
                     <p>{{description}}</p>
-                    <p>{{date_submitted}}</p>
+                    <p>{{format_date date_submitted}}</p>
                 </div>
 
             </div>
@@ -42,23 +42,23 @@
                         <div class="property">
                         <textarea class="" id="comment-desc" name="comment-desc"></textarea>
                         </div>
-                        <button class="postButton" id="postButton" data-id="{{id}}">Post</button>
+                        <button class="postButton" id="postButton" data-id="{{id}}">Comment</button>
                     </form>
                 {{/if}}
                 
                 {{#if comments.length}}
                     <div class="allPosts">
                         {{#each comments as |comment| }}
-                            <div class="singlePost">
-                                <h4>Comment created by: {{comment.user.username}}</h4>
+                            <div class="singlePost commentBox">
+                                <button class="delComment deleteButton" data-id="{{comment.id}}">X</button>
                                 <p>{{comment.description}}</p>
-                                <p>Comment created on: {{format_date comment.date_submitted}}</p>
-                                <button class="delComment" data-id="{{comment.id}}">Delete</button>
+                                <h4>{{comment.user.username}}</h4>
+                                <p>{{format_date comment.date_submitted}}</p>
+                                {{!-- <button class="delComment deleteButton" data-id="{{comment.id}}">X</button> --}}
                             </div>
                         {{/each}}
                     </div>
                 {{/if}}
-                <p>filler text here</p>
             </div>
         </div>
     </div>
@@ -70,4 +70,5 @@
 <script src="/js/logout.js"></script>
 {{!-- {{/if}} --}}
 <script src="/js/comment.js"></script>
-<script src="/js/plantFunc.js"></script>
+{{!-- <script src="/js/plantFunc.js"></script> --}}
+<script src="/js/singlePlant.js"></script>
