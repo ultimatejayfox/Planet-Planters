@@ -31,9 +31,8 @@ async function delPlant(event) {
     // grab comment.id from the button
     const id = event.target.getAttribute('data-id');
     console.log(id);
-
-    const response = await fetch(`/api/comments/${id}`, {
-        method: 'DELETE',
+    const response = await fetch(`/api/plants/${id}`, {
+      method: 'DELETE',
     });
     if (response.ok) {
         console.log('response is ok');
